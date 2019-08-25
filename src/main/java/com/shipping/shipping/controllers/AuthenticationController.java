@@ -3,12 +3,10 @@ package com.shipping.shipping.controllers;
 import com.shipping.shipping.entities.Role;
 import com.shipping.shipping.services.AuthenticationService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("authentication")
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
 
