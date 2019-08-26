@@ -13,13 +13,17 @@ public interface OrderService {
     String addOrder(Long orderNumber,
                     String address,
                     Long client_id,
-                    Long status_id);
+                    Long status_id,
+                    Long product_id,
+                    Integer product_amount);
 
     String updateOrderById(Long id,
                            Long orderNumber,
                            String address,
                            Long client_id,
-                           Long status_id);
+                           Long status_id,
+                           Long product_id,
+                           Integer product_amount);
 
     String updateOrderStatus(Long id, Long status_id);
 

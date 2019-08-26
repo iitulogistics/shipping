@@ -3,16 +3,15 @@ package com.shipping.shipping.services.impl;
 import com.shipping.shipping.entities.StatusEntity;
 import com.shipping.shipping.repositories.StatusRepository;
 import com.shipping.shipping.services.StatusService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DefaultStatusService implements StatusService {
-    private StatusRepository repository;
+    private final StatusRepository repository;
 
-    @Autowired(required = false)
-    public void setStatusRepository(StatusRepository repository) {
+    public DefaultStatusService(StatusRepository repository) {
         this.repository = repository;
     }
 

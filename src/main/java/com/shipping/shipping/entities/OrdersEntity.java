@@ -15,6 +15,8 @@ public class OrdersEntity {
     private Long client_id;
     private Date created;
     private Long status_id;
+    private Long product_id;
+    private Integer product_amount;
 
     public Long getId() {
         return id;
@@ -62,5 +64,21 @@ public class OrdersEntity {
 
     public void setStatus_id(Long status_id) {
         this.status_id = status_id;
+    }
+
+    public Long getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(Long product_id) {
+        this.product_id = product_id;
+    }
+
+    public Integer getProduct_amount() {
+        return product_amount;
+    }
+
+    public void setProduct_amount(Integer product_amount) {
+        this.product_amount = product_amount;
     }
 }

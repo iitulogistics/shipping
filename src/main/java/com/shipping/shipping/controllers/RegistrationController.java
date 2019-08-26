@@ -3,6 +3,7 @@ package com.shipping.shipping.controllers;
 import com.shipping.shipping.entities.Role;
 import com.shipping.shipping.entities.UserEntity;
 import com.shipping.shipping.repositories.UserRepository;
+import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -13,6 +14,7 @@ import java.util.Collections;
 
 @RestController
 @RequestMapping("registration")
+@Api(tags = "Регистрация", description = "Api для регистрации")
 //@PreAuthorize("hasRole(Role.MANAGER)")
 public class RegistrationController {
     private final UserRepository userRepository;

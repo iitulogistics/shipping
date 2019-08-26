@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DefaultClientService implements ClientService {
-    private ClientRepository repository;
+    private final ClientRepository repository;
 
-    @Autowired(required = false)
-    public void setClientRepository(ClientRepository repository){
+    public DefaultClientService(ClientRepository repository) {
         this.repository = repository;
     }
 

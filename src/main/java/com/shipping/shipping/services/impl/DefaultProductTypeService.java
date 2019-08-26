@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DefaultProductTypeService implements ProductTypeService {
 
-    private ProductTypeRepository repository;
+    private final ProductTypeRepository repository;
 
-    @Autowired(required = false)
-    public void setProductTypeRepository(ProductTypeRepository repository) {
+    public DefaultProductTypeService(ProductTypeRepository repository) {
         this.repository = repository;
     }
 
