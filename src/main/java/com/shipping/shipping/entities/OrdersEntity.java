@@ -17,6 +17,7 @@ public class OrdersEntity {
     private Long status_id;
     private Long product_id;
     private Integer product_amount;
+    private Long id_driver;
 
     public Long getId() {
         return id;
@@ -80,5 +81,13 @@ public class OrdersEntity {
 
     public void setProduct_amount(Integer product_amount) {
         this.product_amount = product_amount;
+    }
+
+    public Long getId_driver() {
+        return id_driver;
+    }
+
+    public void setId_driver(Long id_driver) {
+        this.id_driver = id_driver;
     }
 }

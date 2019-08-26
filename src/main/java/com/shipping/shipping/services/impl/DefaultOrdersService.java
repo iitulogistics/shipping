@@ -29,12 +29,23 @@ public class DefaultOrdersService implements OrderService {
     }
 
     @Override
+    public List<OrdersEntity> getOrdersByIdDriver(Long id) {
+        return orderRepository.getOrdersByDriverId(id);
+    }
+
+    @Override
+    public List<OrdersEntity> getOrdersByIdDriverAndIdStatus(Long id_driver, Long id_status) {
+        return orderRepository.getOrdersByDriverAndStatus(id_driver, id_status);
+    }
+
+    @Override
     public String addOrder(Long orderNumber,
                            String address,
                            Long client_id,
                            Long status_id,
                            Long product_id,
-                           Integer product_amount) {
+                           Integer product_amount,
+                           Long id_driver) {
         OrdersEntity ordersEntity = new OrdersEntity();
         ordersEntity.setOrderNumber(orderNumber);
         ordersEntity.setAddress(address);
@@ -43,6 +54,7 @@ public class DefaultOrdersService implements OrderService {
         ordersEntity.setStatus_id(status_id);
         ordersEntity.setProduct_id(product_id);
         ordersEntity.setProduct_amount(product_amount);
+        ordersEntity.setId_driver(id_driver);
 
         orderRepository.save(ordersEntity);
         return "Order is added";
@@ -55,7 +67,8 @@ public class DefaultOrdersService implements OrderService {
                                   Long client_id,
                                   Long status_id,
                                   Long product_id,
-                                  Integer product_amount) {
+                                  Integer product_amount,
+                                  Long id_driver) {
         OrdersEntity ordersEntity = orderRepository.getOne(id);
         ordersEntity.setAddress(address);
         ordersEntity.setClient_id(client_id);
@@ -63,6 +76,7 @@ public class DefaultOrdersService implements OrderService {
         ordersEntity.setOrderNumber(orderNumber);
         ordersEntity.setProduct_id(product_id);
         ordersEntity.setProduct_amount(product_amount);
+        ordersEntity.setId_driver(id_driver);
 
         orderRepository.save(ordersEntity);
         return "Order is updated";
