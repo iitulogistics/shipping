@@ -5,11 +5,9 @@ import com.shipping.shipping.entities.UserEntity;
 import com.shipping.shipping.repositories.UserRepository;
 import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.ws.WebServiceProvider;
 import java.util.Collections;
 
 @RestController
